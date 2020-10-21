@@ -261,9 +261,9 @@ public class Laboratory {
         print("Inicio2"
                 + "a"
                 + ": ");
-        String begin = scan.next();
+        int begin = scan.nextInt();
         print("Fim: ");
-        String end = scan.next();
+        int end = scan.nextInt();
         Teacher t = getTeacher();
         Student student = getStudent();
         
@@ -316,7 +316,29 @@ public class Laboratory {
             print(student.getName());
         });
         
-        //falta mostrar publicações
+        Map<String,Publication> show = new HashMap<>();
+        ArrayList<Publication> _publications = p.getPublications();
+        Publication pub = null;
+        int maior = 0;
+        for (Publication _orientation : _publications) {
+            maior = 0;
+            for(Publication single_publication:_publications)
+            {
+                if(single_publication.getYear()>maior && show.get(single_publication.getTitle())==null)
+                {
+                    maior = single_publication.getYear(); 
+                    pub = single_publication;
+                }
+            }
+            if(pub != null)
+            {
+                print("Title:");
+                print(pub.getTitle());  
+                print("Ano:");
+                print(pub.getYear());  
+                show.put(pub.getTitle(), pub);
+            }
+        }
     }
     
     public Person getPerson()
@@ -340,7 +362,28 @@ public class Laboratory {
         Person p = getPerson();
         print("Name:");
         print(p.getName());
-        
-        //falta mostrar publicações
+        Map<String,Orientation> show = new HashMap<>();
+        ArrayList<Orientation> _orientations = p.getOrientations();
+        Orientation ori = null;
+        int maior = 0;
+        for (Orientation _orientation : _orientations) {
+            maior = 0;
+            for(Orientation single_orientation:_orientations)
+            {
+                if(single_orientation.getEnd()>maior && show.get(single_orientation.getTitle())==null)
+                {
+                    maior = single_orientation.getEnd(); 
+                    ori = single_orientation;
+                }
+            }
+            if(ori != null)
+            {
+                print("Title:");
+                print(ori.getTitle()); 
+                print("Fim:");
+                print(ori.getEnd());  
+                show.put(ori.getTitle(), ori);
+            }
+        }
     }
 }

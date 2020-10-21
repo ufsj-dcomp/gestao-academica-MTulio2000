@@ -11,7 +11,7 @@ package com.mycompany.managementsystem.Management;
  */
 public class Orientation {
     private String  title;
-    private String begin,end;
+    private int begin,end;
     private Teacher coordinator;
     private Person student;
 
@@ -23,19 +23,19 @@ public class Orientation {
         this.title = title;
     }
 
-    public String getBegin() {
+    public int getBegin() {
         return begin;
     }
 
-    public void setBegin(String begin) {
+    public void setBegin(int begin) {
         this.begin = begin;
     }
 
-    public String getEnd() {
+    public int getEnd() {
         return end;
     }
 
-    public void setEnd(String end) {
+    public void setEnd(int end) {
         this.end = end;
     }
 

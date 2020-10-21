@@ -29,6 +29,11 @@ public class Person {
     public String getName() {
         return name;
     }
+    
+    public ArrayList<Orientation> getOrientations()
+    {
+        return this.orientations;
+    }
 
     public void setName(String name) {
         this.name = name;

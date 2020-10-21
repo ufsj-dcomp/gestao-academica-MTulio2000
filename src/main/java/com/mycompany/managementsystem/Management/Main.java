@@ -67,6 +67,27 @@ public class Main{
         return op;
     }
     
+    public static void queryOptions()
+    {
+        
+        int op;
+        System.out.println("Selecione a opção requerida:");
+        System.out.println("1- Consulta Colaborador");
+        System.out.println("2- Consulta Projeto");
+        System.out.println("Other -Sair");
+        op = scan.nextInt();
+        switch(op)
+        {
+            case 1 ->{
+                lab.contributorQuery();
+            }
+            case 2 ->
+            {
+                lab.projectsQuery();
+            }
+        }
+    }
+    
     public static void main(String[] args) {
         boolean runApp = true;
         do
@@ -93,7 +114,7 @@ public class Main{
                 }
                 case 7->
                 {
-                    lab.projectsQuery();                                    
+                    queryOptions();
                 }
                 default -> runApp = false;
             }
