@@ -12,9 +12,9 @@ package com.mycompany.managementsystem.Management;
 public class Publication {
     private String title;
     private String conference;
-    private String year;
-    private Project project;
     
+    private int year;
+
     public String getTitle() {
         return title;
     }
@@ -31,24 +31,11 @@ public class Publication {
         this.conference = conference;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
-    }
-
-    public Project getProject() {
-        return project;
-    }
-
-    public boolean setProject(Project p) {
-        if(p.getStatus().equals("Em andamento"))
-        {
-            this.project = p;
-            return true;
-        }
-        return false;
     }
 }

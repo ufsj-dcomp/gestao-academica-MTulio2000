@@ -5,24 +5,10 @@
  */
 package com.mycompany.managementsystem.Management;
 
-import java.util.ArrayList;
 /**
  *
  * @author marco
  */
 public class Teacher extends Person{
-    private final ArrayList<Orientation> orientations;
-
-    public Teacher() {
-        this.orientations = new ArrayList();
-    }
     
-    public boolean addOrientation(Orientation p)
-    {
-        if(p.getCoordinator() != null) {
-            this.orientations.add(p);
-            return true;
-        }   
-        return false;
-    }
 }

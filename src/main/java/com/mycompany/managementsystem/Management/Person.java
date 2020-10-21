@@ -10,11 +10,28 @@ import java.util.ArrayList;
  * @author marco
  */
 public class Person {
-    String name;
-    ArrayList<Publication> publications = new ArrayList();
-    
-    public void addPublication(Publication p)
-    {
-        this.publications.add(p);
+    private String name;
+    private final ArrayList<Orientation> orientations;
+
+    public Person() {
+        this.orientations = new ArrayList();
     }
+    
+    public boolean addOrientation(Orientation p)
+    {
+        if(p.getCoordinator() != null) {
+            this.orientations.add(p);
+            return true;
+        }   
+        return false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 }
